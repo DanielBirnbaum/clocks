@@ -23,8 +23,29 @@ export class ClockComponent implements OnInit {
   setTime() {
     
     let h = new Date();
-    let t =
-      h.getHours() + ":" + h.getMinutes() + ":" + h.getSeconds();
-    this.time = t;
+    let t ="";
+      let newtime = '';
+    switch(this.city){
+      case 'Jerusalem':
+        newtime = h.getHours() + ':' + h.getMinutes() + ':' + h.getSeconds();
+        break;
+      case 'Chicago':
+        newtime = (h.getHours()-8) + ':' + h.getMinutes() + ':' + h.getSeconds();
+        break;
+      case 'Tokyo':
+        newtime = (h.getHours()+7) + ':' + h.getMinutes() + ':' + h.getSeconds();
+        break;
+      case 'Moscow':
+        newtime = (h.getHours()+1) + ':' + h.getMinutes() + ':' + h.getSeconds();
+        break;
+      case 'London':
+        newtime = (h.getHours()-2) + ':' + h.getMinutes() + ':' + h.getSeconds();
+        break;
+      case 'NewYork':
+        newtime = (h.getHours()-7) + ':' + h.getMinutes() + ':' + h.getSeconds();
+        break;
+    }
+      // h.getHours() + ":" + h.getMinutes() + ":" + h.getSeconds();
+    this.time = newtime;
   }
 }
