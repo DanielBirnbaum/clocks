@@ -1,0 +1,15 @@
+p {
+  font-family: Lato;
+}
+.row1{
+  display: flex;
+  justify-content: space-between;
+}
+.row2{
+  display: flex;
+  justify-content: center;
+}
+.row3{
+  display: flex;
+  justify-content: space-around;
+}
